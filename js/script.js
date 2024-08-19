@@ -54,12 +54,36 @@ button.addEventListener('click', function() {
     const emailUser = document.getElementById('email').value;
     const checkResult = document.getElementById('checkResult');
 
-    // se l'email corrisponde ad almeno una autorizzata stampa approved altrimenti non valida
-    if(emailUser === okEmail[0] || emailUser === okEmail[1] || emailUser === okEmail[2]){
-        console.log(emailUser);
-        checkResult.innerText = 'email approvata';
 
-    } else {
+
+    // se l'email corrisponde ad almeno una autorizzata stampa approved altrimenti non valida
+    // if(emailUser === okEmail[0] || emailUser === okEmail[1] || emailUser === okEmail[2]){
+    //     console.log(emailUser);
+    //     checkResult.innerText = 'email approvata';
+
+    // } else {
+    //     checkResult.innerText = 'email non valida';
+    // }
+
+
+
+    
+    // svolgo con il ciclo for
+    // creo una variabile qual ora trovassi o meno l'email e gli do preimpostato un valore falso
+    emailFound = false;
+
+    // creo un ciclo che mi controlli in automatico le email
+    for (let i = 0; i < okEmail.length; i++){
+        if(okEmail[i] === emailUser){
+            emailFound = true;
+            break;
+        }
+    }
+
+    // se è presente nell array stampo che è stata approvata altrimenti...
+    if (emailFound){
+        checkResult.innerText = 'email approvata';   
+    } else{
         checkResult.innerText = 'email non valida';
     }
 
