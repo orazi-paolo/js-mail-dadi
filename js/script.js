@@ -4,6 +4,8 @@
 2. stabilisci il vincitore in base al punteggio piu alto
 3. stampa in pagina i due tiri e il risultato
 */
+
+
 // creo il primo numero causale (giocatore)
 const casualNumberOne = Math.floor(Math.random() * 6) + 1;
 console.log('Al giocatore è uscito ', casualNumberOne);
@@ -22,3 +24,11 @@ if(casualNumberOne > casualNumberTwo){
     win = 'Pareggio';
 }
 console.log(win);
+
+// stampo in pagina
+const player = document.getElementById('player');
+const computer = document.getElementById('computer');
+const result = document.getElementById('result');
+player.innerText = `Al giocatore è uscito ${casualNumberOne}`;
+computer.innerText = `Al computer è uscito ${casualNumberTwo}`;
+result.innerText = win;
