@@ -4,10 +4,21 @@
 2. stabilisci il vincitore in base al punteggio piu alto
 3. stampa in pagina i due tiri e il risultato
 */
-// creo il primo numero causale
-let casualNumberOne = Math.floor(Math.random() * 6) + 1;
-console.log(casualNumberOne);
+// creo il primo numero causale (giocatore)
+const casualNumberOne = Math.floor(Math.random() * 6) + 1;
+console.log('Al giocatore è uscito ', casualNumberOne);
 
-// creo il secondo numero casuale
-let casualNumberTwo = Math.floor(Math.random() * 6) +1;
-console.log(casualNumberTwo);
+// creo il secondo numero casuale (computer)
+const casualNumberTwo = Math.floor(Math.random() * 6) +1;
+console.log('Al computer è uscito ', casualNumberTwo);
+
+// stabilisco il vincitore
+let win;
+if(casualNumberOne > casualNumberTwo){
+    win = 'Il giocatore ha vinto';
+} else if (casualNumberOne < casualNumberTwo){
+    win = 'Il computer ha vinto';
+}else{
+    win = 'Pareggio';
+}
+console.log(win);
