@@ -32,3 +32,39 @@ const result = document.getElementById('result');
 player.innerText = `Al giocatore è uscito ${casualNumberOne}`;
 computer.innerText = `Al computer è uscito ${casualNumberTwo}`;
 result.innerText = win;
+
+
+
+// ESERCIZIO 2
+/* 
+1. inventa una lista di email autorizzate
+2. chiedi all'utente la sua email tramite form
+3. controlla che sia nella lista
+4. stampa un messaggio sull'esito del controllo
+*/
+
+// creo una lista di email autorizzate 
+const okEmail = ['paolo.orazi@boolean.com', 'pincopallino@boolean.com', 'pippopaperino@boolean.com'];
+
+// prendo dal dom il bottone
+const button = document.getElementById('button');
+
+// quando clicco sul bottone prendo il valore inserito dal cliente (email), controllo se è presente nella lista
+button.addEventListener('click', function() {
+    const emailUser = document.getElementById('email').value;
+    const checkResult = document.getElementById('checkResult');
+
+    // se l'email corrisponde ad almeno una autorizzata stampa approved altrimenti non valida
+    if(emailUser === okEmail[0] || emailUser === okEmail[1] || emailUser === okEmail[2]){
+        console.log(emailUser);
+        checkResult.innerText = 'email approvata';
+
+    } else {
+        checkResult.innerText = 'email non valida';
+    }
+
+    // svuoto il valore di email
+    document.getElementById('email').value = '';
+})
+
+
